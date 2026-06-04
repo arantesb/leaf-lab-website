@@ -1,0 +1,11 @@
+{
+  "colors": {
+    "--deep-forest": "#2c3e28",
+    "--canopy":      "#536d4a",
+    "--gold":        "#c8a45a",
+    "--sunlight":    "#efe293",
+    "--paper":       "#fefcee",
+    "--sky":         "#4a7c8e",
+    "--ink":         "#211c01"
+  }
+}

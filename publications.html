@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — LEAF LAB | University of Maryland</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="logo.png" alt="LEAF LAB logo" class="nav__logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <path d="M24 6 C14 6 6 16 6 28 C6 36 12 42 24 44 C36 42 42 36 42 28 C42 16 34 6 24 6Z" fill="#efe293" opacity=".9"/>
+        <line x1="24" y1="44" x2="24" y2="22" stroke="#2c3e28" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="14" y1="38" x2="20" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <line x1="34" y1="38" x2="28" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <circle cx="24" cy="6" r="3" fill="#c8a45a"/>
+        <circle cx="24" cy="6" r="6" stroke="#c8a45a" stroke-width="1" opacity=".35"/>
+      </svg>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">LEAF LAB</span>
+        <span class="nav__logo-sub">University of Maryland</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="btn btn-primary">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--field-data);text-align:center;display:block;">Scholarly Output</div>
+    <h1>Publications</h1>
+    <p>Peer-reviewed articles, book chapters, theses, and dissertations from LEAF LAB and its collaborators.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+      <div>
+        <div class="section-label">Research Output</div>
+        <h2 class="section-title" style="margin-bottom:0;">All Publications</h2>
+      </div>
+      <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank" class="btn btn-dark" style="flex-shrink:0;">
+        Google Scholar ↗
+      </a>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="pub-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="article">Journal Articles</button>
+      <button class="filter-btn" data-filter="thesis">Theses & Dissertations</button>
+      <button class="filter-btn" data-filter="book">Book Chapters</button>
+    </div>
+
+    <!-- Publication list rendered by JS -->
+    <div class="pub-list" id="pub-list"></div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem;background:var(--sunlight);border-radius:var(--radius);text-align:center;">
+      <p style="color:var(--ink);margin:0 auto 1rem;max-width:55ch;">This is a representative selection of LEAF LAB publications. For a full list of Dr. Duncanson's work, visit her Google Scholar profile.</p>
+      <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank" class="btn btn-primary">View Full Publication List ↗</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">LEAF LAB</div>
+        <div class="footer__brand-sub">Lidar Ecology &amp; Forests</div>
+        <p class="footer__desc">Advancing global forest carbon science through spaceborne lidar, data fusion, and ecological theory.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Navigate</div>
+        <a href="index.html">Home</a><a href="team.html">Team</a><a href="projects.html">Projects</a><a href="publications.html">Publications</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Resources</div>
+        <a href="news.html">News &amp; Media</a><a href="contact.html">Contact</a>
+        <a href="https://geog.umd.edu/facultyprofile/duncanson/laura" target="_blank">UMD Profile</a>
+        <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank">Google Scholar</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Missions</div>
+        <a href="https://gedi.umd.edu" target="_blank">GEDI</a><a href="https://icesat-2.gsfc.nasa.gov" target="_blank">ICESat-2</a>
+        <a href="https://above.nasa.gov" target="_blank">NASA ABoVE</a><a href="https://ceos.org" target="_blank">CEOS</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 LEAF LAB · University of Maryland, College Park</span>
+      <span class="footer__umd">Department of Geographical Sciences</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ── Load publications from content/publications.json ──────────
+const badgeClass = { article: 'badge-article', thesis: 'badge-thesis', book: 'badge-book' };
+const badgeLabel = { article: 'Article', thesis: 'Dissertation', book: 'Book Chapter' };
+
+let allPubs = [];
+
+function renderPubs(filter) {
+  const list   = document.getElementById('pub-list');
+  const pubs   = filter === 'all' ? allPubs : allPubs.filter(p => p.type === filter);
+  const years  = [...new Set(pubs.map(p => p.year))].sort((a, b) => b - a);
+
+  list.innerHTML = years.map(yr => {
+    const items = pubs.filter(p => p.year === yr);
+    const label = yr >= 2020 ? yr : 'Earlier';
+    return `
+      <div style="font-family:var(--font-sub);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(33,28,1,.6);padding:.5rem 0;border-bottom:1px solid rgba(83,109,74,.1);margin:1rem 0 .5rem;">${label}</div>
+      ${items.map(p => {
+        const titleHtml = p.url
+          ? `<a href="${p.url}" target="_blank" class="pub-item__title" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">${p.title}</a>`
+          : `<div class="pub-item__title">${p.title}</div>`;
+        const highlight = p.highlight ? ' <strong>· Highly Cited</strong>' : '';
+        return `
+          <div class="pub-item fade-up" data-type="${p.type}">
+            <span class="pub-item__badge ${badgeClass[p.type] || ''}">${badgeLabel[p.type] || p.type}</span>
+            ${titleHtml}
+            <div class="pub-item__authors">${p.authors}</div>
+            <div class="pub-item__journal">${p.journal}${p.details ? ' · ' + p.details : ''}${highlight}</div>
+          </div>`;
+      }).join('')}`;
+  }).join('');
+
+  // Re-observe for fade-up
+  list.querySelectorAll('.fade-up').forEach(el => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: .08 });
+    obs.observe(el);
+  });
+}
+
+fetch('content/publications.json')
+  .then(r => r.json())
+  .then(pubs => {
+    allPubs = pubs;
+    renderPubs('all');
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderPubs(btn.dataset.filter);
+      });
+    });
+  })
+  .catch(() => {
+    document.getElementById('pub-list').innerHTML = '<p style="color:red;">Could not load publications data.</p>';
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "nyt-gedi-2023",
+    "title": "GEDI Researchers Explain How Forests Can Fight Climate Change",
+    "source": "The New York Times",
+    "date": "2023-11-15",
+    "year": "2023",
+    "category": "Press",
+    "excerpt": "Dr. Laura Duncanson and Professor Ralph Dubayah featured in The New York Times discussing how GEDI's spaceborne lidar is transforming our understanding of forest height, structure, and carbon storage — and why forests are critical to climate solutions.",
+    "url": "https://geog.umd.edu/news/new-york-times-gedi-researchers-explain-how-forests-can-fight-climate-change",
+    "emoji": "🌿",
+    "featured": true
+  },
+  {
+    "id": "nasa-biomass-2025",
+    "title": "NASA Releases Breakthrough Forest Biomass-Carbon Product",
+    "source": "NASA Earth",
+    "date": "2025-03-10",
+    "year": "2025",
+    "category": "NASA",
+    "excerpt": "NASA officially releases the GEDI Level-4B gridded aboveground biomass density map — a global product co-developed by the LEAF LAB team, providing the most comprehensive forest carbon map from space.",
+    "url": "https://www.nasa.gov/earth-and-climate/nasa-releases-breakthrough-forest-biomass-carbon-product/",
+    "emoji": "🛰",
+    "featured": false
+  },
+  {
+    "id": "nasa-svs-2025",
+    "title": "From Space to Soil: How NASA Sees Forests",
+    "source": "NASA SVS",
+    "date": "2025-07-01",
+    "year": "2025",
+    "category": "Video",
+    "excerpt": "Dr. Duncanson narrates a NASA Scientific Visualization Studio feature explaining how spaceborne lidar captures the 3-D architecture of forests — from the International Space Station to individual tree canopies.",
+    "url": "https://svs.gsfc.nasa.gov/14854/",
+    "emoji": "▶️",
+    "featured": false
+  },
+  {
+    "id": "interesting-engineering-2023",
+    "title": "A Breakthrough Technology Shoots Laser Beams at Trees from the ISS",
+    "source": "Interesting Engineering",
+    "date": "2023-08-01",
+    "year": "2023",
+    "category": "Press",
+    "excerpt": "Feature on GEDI's revolutionary approach to measuring global forest structure — shooting billions of laser pulses at Earth's forests from the International Space Station to map carbon stocks no satellite had reached before.",
+    "url": "https://interestingengineering.com/science/breakthrough-laser-beams-trees-iss",
+    "emoji": "🔬",
+    "featured": false
+  },
+  {
+    "id": "protected-areas-2023",
+    "title": "Protected Areas Safeguard Climate",
+    "source": "NASA Earth Observatory",
+    "date": "2023-09-20",
+    "year": "2023",
+    "category": "Research",
+    "excerpt": "LEAF LAB research reveals that global protected areas store significantly more carbon than unprotected forests — providing the first satellite-based proof that conservation policy delivers measurable climate benefits.",
+    "url": "https://earthobservatory.nasa.gov/images/151515/protected-areas-safeguard-climate",
+    "emoji": "🌍",
+    "featured": false
+  },
+  {
+    "id": "oxford-2023",
+    "title": "Forest Biomass Estimation from Space — New Estimates, Challenges, and Future Opportunities",
+    "source": "Oxford Centre for Tropical Forests",
+    "date": "2023-05-01",
+    "year": "2023",
+    "category": "Talk",
+    "excerpt": "Dr. Duncanson presents at the Oxford Centre for Tropical Forests, covering the latest GEDI results, remaining challenges in biomass estimation, and the roadmap for next-generation spaceborne lidar missions.",
+    "url": "https://www.tropicalforests.ox.ac.uk/event/laura-duncanson/",
+    "emoji": "🎙",
+    "featured": false
+  },
+  {
+    "id": "youtube-essic-2023",
+    "title": "Mapping Forest Aboveground Carbon Content with New NASA Lidar Missions",
+    "source": "YouTube · ESSIC/UMD",
+    "date": "2023-03-01",
+    "year": "2023",
+    "category": "Video",
+    "excerpt": "Public lecture by Prof. Duncanson covering GEDI and ICESat-2 science results, methodological innovations in spaceborne biomass estimation, and the path toward a complete global forest carbon inventory.",
+    "url": "https://www.youtube.com/watch?v=TX5pDLiVjg4",
+    "emoji": "▶️",
+    "featured": false
+  }
+]

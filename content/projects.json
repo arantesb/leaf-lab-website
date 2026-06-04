@@ -1,0 +1,62 @@
+[
+  {
+    "id": "gedi-biomass",
+    "title": "GEDI Biomass Product Development",
+    "funder": "NASA · Global · 2019 – Present",
+    "emoji": "🛰",
+    "status": "active",
+    "description": "Development and validation of allometric models underpinning NASA's Global Ecosystem Dynamics Investigation (GEDI) footprint-level aboveground biomass density product (GEDI04_A). GEDI is mounted on the International Space Station and collects full-waveform lidar data across tropical and temperate forests globally.",
+    "people": "Duncanson · Tang · Liang + GEDI Science Team",
+    "location": "Global"
+  },
+  {
+    "id": "protected-areas",
+    "title": "Protected Areas Carbon Assessment",
+    "funder": "NASA · Global Protected Areas · 2021 – Present",
+    "emoji": "🌿",
+    "status": "active",
+    "description": "First global-scale quantification of the climate value of protected areas using GEDI data. Results showed that protected forests hold significantly higher biomass stocks than comparable unprotected land — providing empirical evidence for nature-based climate solutions at policy-relevant scales.",
+    "people": "Duncanson · Liang · Leitold · González-Roglich · Hansen",
+    "location": "Global"
+  },
+  {
+    "id": "mozambique-charcoal",
+    "title": "Charcoal Degradation — Mozambique",
+    "funder": "NASA CMS · Africa · 2020 – 2023",
+    "emoji": "🌍",
+    "status": "completed",
+    "description": "Combining GEDI LiDAR and Landsat time series to quantify aboveground biomass loss from charcoal production across Mozambique — revealing the invisible carbon footprint of forest degradation in data-scarce regions of sub-Saharan Africa.",
+    "people": "Liang · Duncanson · Silva · Sedano",
+    "location": "Mozambique, Africa"
+  },
+  {
+    "id": "icesat2-boreal",
+    "title": "Boreal Forest Biomass — ICESat-2",
+    "funder": "NASA ABoVE · Arctic & Boreal · 2020 – Present",
+    "emoji": "❄️",
+    "status": "active",
+    "description": "Developing algorithms for mapping boreal forest structure using NASA's ICESat-2 laser altimeter — extending global lidar biomass mapping into high-latitude forests that are sensitive to climate change and difficult to monitor with optical sensors alone.",
+    "people": "Duncanson · Tang · ABoVE Science Team",
+    "location": "Alaska & Canada"
+  },
+  {
+    "id": "biodiversity-structure",
+    "title": "Forest Biodiversity & Structure Links",
+    "funder": "NSF · Global · 2022 – Present",
+    "emoji": "🌲",
+    "status": "active",
+    "description": "Testing ecological theory by exploring linkages between forest 3-D structural diversity and biodiversity across global protected areas. Remote sensing data enable tests of ecological hypotheses at unprecedented spatial extent, informing conservation prioritization.",
+    "people": "Duncanson · Swatantran + International Partners",
+    "location": "Global"
+  },
+  {
+    "id": "ceos-validation",
+    "title": "CEOS Biomass Product Validation",
+    "funder": "CEOS · International · Ongoing",
+    "emoji": "🌐",
+    "status": "active",
+    "description": "Co-leading the Committee on Earth Observation Satellites (CEOS) Land Product Validation Biomass sub-group — developing consistent international protocols for calibration and validation of global biomass products from multiple satellite missions.",
+    "people": "Duncanson + CEOS International Science Team",
+    "location": "International"
+  }
+]

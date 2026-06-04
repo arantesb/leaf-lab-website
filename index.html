@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">LEAF LAB — Lidar Ecology & Forests | University of Maryland</title>
+  <meta name="description" content="LEAF LAB uses spaceborne lidar to map and monitor global forest carbon stocks. Led by Dr. Laura Duncanson at the University of Maryland." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="logo.png" alt="LEAF LAB logo" class="nav__logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <path d="M24 6 C14 6 6 16 6 28 C6 36 12 42 24 44 C36 42 42 36 42 28 C42 16 34 6 24 6Z" fill="#efe293" opacity=".9"/>
+        <line x1="24" y1="44" x2="24" y2="22" stroke="#2c3e28" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="14" y1="38" x2="20" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <line x1="34" y1="38" x2="28" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <circle cx="24" cy="6" r="3" fill="#c8a45a"/>
+        <circle cx="24" cy="6" r="6" stroke="#c8a45a" stroke-width="1" opacity=".35"/>
+      </svg>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">LEAF LAB</span>
+        <span class="nav__logo-sub">University of Maryland</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="index.html" class="active">Home</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="btn btn-primary">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="main-content">
+  <!-- Rendered by JS from content/home.json -->
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">LEAF LAB</div>
+        <div class="footer__brand-sub">Lidar Ecology &amp; Forests</div>
+        <p class="footer__desc">Advancing global forest carbon science through spaceborne lidar, data fusion, and ecological theory.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Navigate</div>
+        <a href="index.html">Home</a><a href="team.html">Team</a><a href="projects.html">Projects</a><a href="publications.html">Publications</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Resources</div>
+        <a href="news.html">News &amp; Media</a><a href="contact.html">Contact</a>
+        <a href="https://geog.umd.edu/facultyprofile/duncanson/laura" target="_blank">UMD Profile</a>
+        <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank">Google Scholar</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Missions</div>
+        <a href="https://gedi.umd.edu" target="_blank">GEDI</a><a href="https://icesat-2.gsfc.nasa.gov" target="_blank">ICESat-2</a>
+        <a href="https://above.nasa.gov" target="_blank">NASA ABoVE</a><a href="https://ceos.org" target="_blank">CEOS</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 LEAF LAB · University of Maryland, College Park</span>
+      <span class="footer__umd">Department of Geographical Sciences</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+fetch('content/home.json')
+  .then(r => r.json())
+  .then(d => {
+    const h = d.hero, m = d.mission, hi = d.highlights, c = d.cta;
+
+    // Stats
+    const statsHtml = (h.stats||[]).map(s =>
+      `<div><div class="hero__stat-num">${s.num}</div><div class="hero__stat-label">${s.label}</div></div>`
+    ).join('');
+
+    // Mission cards
+    const mCardsHtml = (m.cards||[]).map((card, i) => `
+      <div class="card fade-up" ${i>0?`style="transition-delay:${i*.1}s"`:''}>
+        <div class="card__body">
+          <div style="font-size:2rem;margin-bottom:.75rem;">${card.emoji}</div>
+          <h4 style="color:var(--deep-forest);margin-bottom:.5rem;">${card.title}</h4>
+          <p style="font-size:.88rem;color:rgba(33,28,1,.6);max-width:100%;">${card.text}</p>
+        </div>
+      </div>`).join('');
+
+    // Highlight cards — alternate accent colours
+    const hlColors = [
+      'linear-gradient(90deg,var(--canopy),var(--gold))',
+      'linear-gradient(90deg,var(--gold),#e8c56e)',
+      'linear-gradient(90deg,var(--sky),#6ec8cb)'
+    ];
+    const hlHtml = (hi||[]).map((card, i) => `
+      <div class="card fade-up" ${i>0?`style="transition-delay:${i*.1}s"`:''}>
+        <div style="height:6px;background:${hlColors[i%hlColors.length]};"></div>
+        <div class="card__body">
+          <div class="card__tag">${card.tag}</div>
+          <h3 style="color:var(--deep-forest);margin-bottom:.75rem;">${card.title}</h3>
+          <p style="font-size:.9rem;color:rgba(33,28,1,.6);max-width:100%;">${card.text}</p>
+          <a href="${card.linkHref}" class="news-card__link">${card.linkText}</a>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('main-content').innerHTML = `
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__bg"></div>
+        <div class="hero__grid"></div>
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <div class="hero__tag">${h.tag}</div>
+              <h1 class="hero__title">${h.title.replace(h.titleHighlight, `<span>${h.titleHighlight}</span>`)}</h1>
+              <p class="hero__desc">${h.description}</p>
+              <div class="hero__actions">
+                <a href="projects.html" class="btn btn-primary">Explore Our Research →</a>
+                <a href="publications.html" class="btn btn-outline">Publications</a>
+              </div>
+              <div class="hero__stats">${statsHtml}</div>
+            </div>
+            <div class="hero__visual">
+              <div class="hero__orb">
+                <div class="hero__orb-inner">
+                  <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="52" stroke="rgba(82,183,136,.4)" stroke-width="1"/>
+                    <line x1="60" y1="8" x2="40" y2="70" stroke="rgba(201,168,76,.7)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <line x1="60" y1="8" x2="60" y2="75" stroke="rgba(201,168,76,.9)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <line x1="60" y1="8" x2="80" y2="70" stroke="rgba(201,168,76,.7)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                    <rect x="54" y="2" width="12" height="8" rx="2" fill="#c9a84c"/>
+                    <rect x="42" y="4" width="10" height="3" rx="1" fill="#c9a84c" opacity=".6"/>
+                    <rect x="68" y="4" width="10" height="3" rx="1" fill="#c9a84c" opacity=".6"/>
+                    <circle cx="40" cy="72" r="4" fill="rgba(82,183,136,.8)"/>
+                    <circle cx="60" cy="77" r="5" fill="rgba(82,183,136,.9)"/>
+                    <circle cx="80" cy="72" r="4" fill="rgba(82,183,136,.8)"/>
+                    <circle cx="50" cy="80" r="3" fill="rgba(82,183,136,.6)"/>
+                    <circle cx="70" cy="80" r="3" fill="rgba(82,183,136,.6)"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSION -->
+      <section class="section section--alt">
+        <div class="container">
+          <div class="section-label">${m.label}</div>
+          <h2 class="section-title">${m.title}</h2>
+          <div class="divider"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+            <div>
+              <p style="color:rgba(33,28,1,.6);font-size:1.05rem;margin-bottom:1.5rem;">${m.text1}</p>
+              <p style="color:rgba(33,28,1,.6);font-size:1.05rem;margin-bottom:2rem;">${m.text2}</p>
+              <a href="projects.html" class="btn btn-dark">Our Projects →</a>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">${mCardsHtml}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="section">
+        <div class="container">
+          <div class="section-label">Research Highlights</div>
+          <h2 class="section-title">Impact at Scale</h2>
+          <div class="divider"></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">${hlHtml}</div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section" style="background:linear-gradient(135deg,var(--deep-forest),var(--canopy));color:var(--paper);text-align:center;">
+        <div class="container">
+          <div class="section-label" style="color:var(--gold);">${c.label}</div>
+          <h2 style="color:var(--paper);max-width:55ch;margin:0 auto 1rem;">${c.title}</h2>
+          <p style="color:rgba(255,255,255,.7);font-size:1.05rem;margin:0 auto 2.5rem;max-width:52ch;">${c.text}</p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            <a href="team.html" class="btn btn-outline">Meet the Team</a>
+          </div>
+        </div>
+      </section>`;
+
+    // Trigger fade-up on dynamically added elements
+    document.querySelectorAll('.fade-up').forEach(el => {
+      const o = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+      }, { threshold: .12 });
+      o.observe(el);
+    });
+  })
+  .catch(() => {
+    document.getElementById('main-content').innerHTML = '<p style="padding:4rem;text-align:center;color:red;">Could not load home content.</p>';
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

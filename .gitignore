@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archives & installers
+*.zip
+*.tar.gz
+
+# Local dev / Windows batch files
+*.bat
+*.sh
+
+# Old duplicate subfolder (replaced by root-level files)
+leaf-lab/
+
+# Old

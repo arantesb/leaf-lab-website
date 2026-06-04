@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — LEAF LAB | University of Maryland</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .map-legend { display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.25rem; }
+    .map-legend-item { display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--ink); }
+    .dot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="logo.png" alt="LEAF LAB logo" class="nav__logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <path d="M24 6 C14 6 6 16 6 28 C6 36 12 42 24 44 C36 42 42 36 42 28 C42 16 34 6 24 6Z" fill="#efe293" opacity=".9"/>
+        <line x1="24" y1="44" x2="24" y2="22" stroke="#2c3e28" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="14" y1="38" x2="20" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <line x1="34" y1="38" x2="28" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <circle cx="24" cy="6" r="3" fill="#c8a45a"/>
+        <circle cx="24" cy="6" r="6" stroke="#c8a45a" stroke-width="1" opacity=".35"/>
+      </svg>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">LEAF LAB</span>
+        <span class="nav__logo-sub">University of Maryland</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="team.html">Team</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="btn btn-primary">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--field-data);text-align:center;display:block;">Research</div>
+    <h1>Projects</h1>
+    <p>From the Amazon to the boreal north — LEAF LAB investigates forest carbon across every major biome on Earth.</p>
+  </div>
+</div>
+
+<!-- Projects Grid -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Active Projects</div>
+    <h2 class="section-title">Current Research Portfolio</h2>
+    <div class="divider"></div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- Map -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-label">Global Footprint</div>
+    <h2 class="section-title">Where We Work</h2>
+    <div class="divider"></div>
+    <p class="section-intro">LEAF LAB research spans every forested continent — from the humid tropics to the boreal zone and beyond.</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-180,-70,180,75&amp;layer=mapnik&amp;marker=38.986,-76.942"
+        style="width:100%;height:100%;border:none;"
+        title="LEAF LAB global project locations">
+      </iframe>
+    </div>
+    <div class="map-legend" style="margin-top:1.25rem;">
+      <div class="map-legend-item"><div class="dot" style="background:#c8a45a;"></div> Active GEDI / LiDAR Studies</div>
+      <div class="map-legend-item"><div class="dot" style="background:#c9a84c;"></div> Carbon Monitoring Projects</div>
+      <div class="map-legend-item"><div class="dot" style="background:#a8dadc;"></div> Boreal / Arctic Studies</div>
+      <div class="map-legend-item"><div class="dot" style="background:#e07b54;"></div> Degradation Studies</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:2rem;">
+      <div style="background:var(--paper);border-radius:var(--radius);padding:1rem 1.25rem;border:1px solid rgba(83,109,74,.1);display:flex;gap:.75rem;align-items:center;">
+        <span style="font-size:1.5rem;">🌎</span>
+        <div><div style="font-weight:600;color:var(--deep-forest);font-size:.9rem;">Americas</div><div style="font-size:.8rem;color:rgba(33,28,1,.6);">Maryland · Sonoma · Amazon Basin</div></div>
+      </div>
+      <div style="background:var(--paper);border-radius:var(--radius);padding:1rem 1.25rem;border:1px solid rgba(83,109,74,.1);display:flex;gap:.75rem;align-items:center;">
+        <span style="font-size:1.5rem;">🌍</span>
+        <div><div style="font-weight:600;color:var(--deep-forest);font-size:.9rem;">Africa</div><div style="font-size:.8rem;color:rgba(33,28,1,.6);">Mozambique · Sub-Saharan forests</div></div>
+      </div>
+      <div style="background:var(--paper);border-radius:var(--radius);padding:1rem 1.25rem;border:1px solid rgba(83,109,74,.1);display:flex;gap:.75rem;align-items:center;">
+        <span style="font-size:1.5rem;">🌏</span>
+        <div><div style="font-weight:600;color:var(--deep-forest);font-size:.9rem;">Asia-Pacific</div><div style="font-size:.8rem;color:rgba(33,28,1,.6);">SE Asian tropics · Global coverage</div></div>
+      </div>
+      <div style="background:var(--paper);border-radius:var(--radius);padding:1rem 1.25rem;border:1px solid rgba(83,109,74,.1);display:flex;gap:.75rem;align-items:center;">
+        <span style="font-size:1.5rem;">❄️</span>
+        <div><div style="font-weight:600;color:var(--deep-forest);font-size:.9rem;">Arctic & Boreal</div><div style="font-size:.8rem;color:rgba(33,28,1,.6);">Alaska · Canada · Russia</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Outcomes -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Impact</div>
+    <h2 class="section-title">Key Outcomes</h2>
+    <div class="divider"></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;">
+      <div class="fade-up" style="padding:2rem 1rem;background:var(--sunlight);border-radius:var(--radius);">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--canopy);font-family:var(--font-sub);">1</div>
+        <div style="font-size:.85rem;color:var(--ink);margin-top:.5rem;">Spaceborne biomass product delivered globally (GEDI L4A)</div>
+      </div>
+      <div class="fade-up" style="padding:2rem 1rem;background:var(--sunlight);border-radius:var(--radius);transition-delay:.1s">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--canopy);font-family:var(--font-sub);">12+</div>
+        <div style="font-size:.85rem;color:var(--ink);margin-top:.5rem;">Countries with active or completed field studies</div>
+      </div>
+      <div class="fade-up" style="padding:2rem 1rem;background:var(--sunlight);border-radius:var(--radius);transition-delay:.2s">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--canopy);font-family:var(--font-sub);">$M+</div>
+        <div style="font-size:.85rem;color:var(--ink);margin-top:.5rem;">In competitive research grants from NASA, NSF, and USFS</div>
+      </div>
+      <div class="fade-up" style="padding:2rem 1rem;background:var(--sunlight);border-radius:var(--radius);transition-delay:.3s">
+        <div style="font-size:2.5rem;font-weight:800;color:var(--canopy);font-family:var(--font-sub);">CEOS</div>
+        <div style="font-size:.85rem;color:var(--ink);margin-top:.5rem;">International co-lead for global biomass validation standards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">LEAF LAB</div>
+        <div class="footer__brand-sub">Lidar Ecology &amp; Forests</div>
+        <p class="footer__desc">Advancing global forest carbon science through spaceborne lidar, data fusion, and ecological theory.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Navigate</div>
+        <a href="index.html">Home</a><a href="team.html">Team</a><a href="projects.html">Projects</a><a href="publications.html">Publications</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Resources</div>
+        <a href="news.html">News &amp; Media</a><a href="contact.html">Contact</a>
+        <a href="https://geog.umd.edu/facultyprofile/duncanson/laura" target="_blank">UMD Profile</a>
+        <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank">Google Scholar</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Missions</div>
+        <a href="https://gedi.umd.edu" target="_blank">GEDI</a><a href="https://icesat-2.gsfc.nasa.gov" target="_blank">ICESat-2</a>
+        <a href="https://above.nasa.gov" target="_blank">NASA ABoVE</a><a href="https://ceos.org" target="_blank">CEOS</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 LEAF LAB · University of Maryland, College Park</span>
+      <span class="footer__umd">Department of Geographical Sciences</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ── Load projects from content/projects.json ──────────────────
+const headerGradients = [
+  'linear-gradient(135deg,#2c3e28,#4a7c4e)',
+  'linear-gradient(135deg,#2c3e28,#3a7d5c)',
+  'linear-gradient(135deg,#2c3e28,#2d5a3d)',
+  'linear-gradient(135deg,#2a3a5c,#3a5c8a)',
+  'linear-gradient(135deg,#3a2a1a,#6a4a2a)',
+  'linear-gradient(135deg,#1a2a3a,#2a4a5a)'
+];
+
+fetch('content/projects.json')
+  .then(r => r.json())
+  .then(projects => {
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = projects.map((p, i) => {
+      const statusBadge = p.status === 'completed'
+        ? '<span style="font-size:.7rem;background:rgba(255,255,255,.15);padding:.15rem .5rem;border-radius:20px;letter-spacing:.06em;">Completed</span>'
+        : '<span style="font-size:.7rem;background:rgba(255,255,255,.15);padding:.15rem .5rem;border-radius:20px;letter-spacing:.06em;">Active</span>';
+      return `
+        <div class="card fade-up" ${i > 0 ? `style="transition-delay:${(i*0.1).toFixed(2)}s"` : ''}>
+          <div class="project-card__header" style="background:${headerGradients[i % headerGradients.length]}">
+            <div class="project-card__icon">${p.emoji}</div>
+            <h3 class="project-card__title">${p.title}</h3>
+            <div class="project-card__funder">${p.funder} ${statusBadge}</div>
+          </div>
+          <div class="project-card__body">
+            <p>${p.description}</p>
+            <div class="project-card__people">🔬 ${p.people}</div>
+          </div>
+        </div>`;
+    }).join('');
+
+    document.querySelectorAll('#projects-grid .fade-up').forEach(el => {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: .12 });
+      obs.observe(el);
+    });
+  })
+  .catch(() => {
+    document.getElementById('projects-grid').innerHTML = '<p style="color:red;">Could not load project data.</p>';
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    

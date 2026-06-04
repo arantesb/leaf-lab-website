@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "label": "Get in Touch",
+    "title": "Contact",
+    "subtitle": "Collaborations, student inquiries, media requests — we'd love to hear from you."
+  },
+  "info": {
+    "address": "Department of Geographical Sciences\nSamuel J. LeFrak Hall, Suite 339\n7251 Preinkert Drive\nUniversity of Maryland\nCollege Park, MD 20742",
+    "email": "lduncans@umd.edu",
+    "phone": "301-405-4050",
+    "links": [
+      { "label": "UMD Profile",    "url": "https://geog.umd.edu/facultyprofile/duncanson/laura" },
+      { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=SgbU98YAAAAJ" },
+      { "label": "ResearchGate",   "url": "https://www.researchgate.net/profile/Laura-Duncanson" }
+    ]
+  },
+  "inquiries": [
+    {
+      "emoji": "🎓",
+      "title": "Graduate Admissions",
+      "text": "Prospective PhD students and postdocs should send a CV, brief statement of research interests, and relevant publication samples."
+    },
+    {
+      "emoji": "🤝",
+      "title": "Research Collaboration",
+      "text": "We actively seek partners across ecology, remote sensing, data science, and climate policy. Reach out with a brief project description."
+    },
+    {
+      "emoji": "📰",
+      "title": "Media & Press",
+      "text": "Dr. Duncanson is available for interviews on forest carbon, GEDI, climate change, and remote sensing policy topics."
+    }
+  ]
+}

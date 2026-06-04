@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team — LEAF LAB | University of Maryland</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__logo">
+      <img src="logo.png" alt="LEAF LAB logo" class="nav__logo-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <path d="M24 6 C14 6 6 16 6 28 C6 36 12 42 24 44 C36 42 42 36 42 28 C42 16 34 6 24 6Z" fill="#efe293" opacity=".9"/>
+        <line x1="24" y1="44" x2="24" y2="22" stroke="#2c3e28" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="14" y1="38" x2="20" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <line x1="34" y1="38" x2="28" y2="26" stroke="#2c3e28" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+        <circle cx="24" cy="6" r="3" fill="#c8a45a"/>
+        <circle cx="24" cy="6" r="6" stroke="#c8a45a" stroke-width="1" opacity=".35"/>
+      </svg>
+      <div class="nav__logo-text">
+        <span class="nav__logo-name">LEAF LAB</span>
+        <span class="nav__logo-sub">University of Maryland</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="index.html">Home</a>
+      <a href="team.html" class="active">Team</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="btn btn-primary">Contact</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label" style="color:var(--field-data);text-align:center;display:block;">People</div>
+    <h1>The LEAF LAB Team</h1>
+    <p>Scientists, engineers, and students united by a shared commitment to understanding Earth's forests through cutting-edge remote sensing.</p>
+  </div>
+</div>
+
+<!-- PI section -->
+<section class="section" id="pi-section">
+  <div class="container">
+    <div class="section-label">Principal Investigator</div>
+    <div class="divider"></div>
+    <div id="pi-container"></div>
+  </div>
+</section>
+
+<!-- Current Members -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-label">Current Members</div>
+    <h2 class="section-title">Researchers & Students</h2>
+    <div class="divider"></div>
+    <div class="team-grid" id="current-grid"></div>
+  </div>
+</section>
+
+<!-- Alumni -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Lab Alumni</div>
+    <h2 class="section-title">Where They Are Now</h2>
+    <div class="divider"></div>
+    <div class="team-grid" id="alumni-grid"></div>
+  </div>
+</section>
+
+<!-- Join -->
+<section class="section" style="background:var(--sunlight);text-align:center;">
+  <div class="container">
+    <div class="section-label">Opportunities</div>
+    <h2 style="color:var(--deep-forest);max-width:44ch;margin:0 auto 1rem;">Passionate about forest carbon science?</h2>
+    <div class="divider" style="margin:1rem auto 1.5rem;"></div>
+    <p style="color:rgba(33,28,1,.6);font-size:1.05rem;margin:0 auto 2rem;max-width:52ch;">LEAF LAB welcomes applications from prospective PhD students and postdoctoral researchers with backgrounds in remote sensing, forest ecology, or data science.</p>
+    <a href="contact.html" class="btn btn-primary">Reach Out →</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">LEAF LAB</div>
+        <div class="footer__brand-sub">Lidar Ecology &amp; Forests</div>
+        <p class="footer__desc">Advancing global forest carbon science through spaceborne lidar, data fusion, and ecological theory.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Navigate</div>
+        <a href="index.html">Home</a><a href="team.html">Team</a><a href="projects.html">Projects</a><a href="publications.html">Publications</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Resources</div>
+        <a href="news.html">News &amp; Media</a><a href="contact.html">Contact</a>
+        <a href="https://geog.umd.edu/facultyprofile/duncanson/laura" target="_blank">UMD Profile</a>
+        <a href="https://scholar.google.com/citations?user=SgbU98YAAAAJ" target="_blank">Google Scholar</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Missions</div>
+        <a href="https://gedi.umd.edu" target="_blank">GEDI</a><a href="https://icesat-2.gsfc.nasa.gov" target="_blank">ICESat-2</a>
+        <a href="https://above.nasa.gov" target="_blank">NASA ABoVE</a><a href="https://ceos.org" target="_blank">CEOS</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 LEAF LAB · University of Maryland, College Park</span>
+      <span class="footer__umd">Department of Geographical Sciences</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ── Load team from content/team.json ──────────────────────────
+fetch('content/team.json')
+  .then(r => r.json())
+  .then(members => {
+    const pi      = members.find(m => m.status === 'pi');
+    const current = members.filter(m => m.status === 'current');
+    const alumni  = members.filter(m => m.status === 'alumni');
+
+    // Render PI
+    if (pi) {
+      const photoHtml = pi.photo
+        ? `<img src="${pi.photo}" alt="${pi.name}" style="width:140px;height:140px;border-radius:50%;object-fit:cover;">`
+        : `<span class="team-card__initials" style="font-size:2.2rem;">${pi.initials}</span>`;
+      const scholarLink = pi.scholar ? `<a href="${pi.scholar}" target="_blank" style="font-size:.75rem;color:var(--canopy);font-weight:600;background:var(--sunlight);padding:.25rem .7rem;border-radius:20px;">Scholar</a>` : '';
+      const profileLink = pi.profile ? `<a href="${pi.profile}" target="_blank" style="font-size:.75rem;color:var(--canopy);font-weight:600;background:var(--sunlight);padding:.25rem .7rem;border-radius:20px;">UMD Profile</a>` : '';
+      const eduLines = pi.education ? pi.education.split('|').map(e => e.trim()).join('<br>') : '';
+      const bio2Html = pi.bio2 ? `<p style="color:rgba(33,28,1,.6);margin-bottom:1.5rem;">${pi.bio2}</p>` : '';
+      document.getElementById('pi-container').innerHTML = `
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:start;max-width:860px;" class="fade-up">
+          <div style="text-align:center;">
+            <div class="team-card__img-wrap" style="width:140px;height:140px;margin:0 auto 1rem;border-width:4px;">${photoHtml}</div>
+            <div style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:.75rem;">${scholarLink}${profileLink}</div>
+          </div>
+          <div>
+            <h2 style="color:var(--deep-forest);margin-bottom:.25rem;">${pi.name}</h2>
+            <div class="team-card__role" style="text-align:left;margin-bottom:1rem;">${pi.role} · ${pi.title}</div>
+            <p style="color:rgba(33,28,1,.6);margin-bottom:1rem;">${pi.bio1}</p>
+            ${bio2Html}
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+              ${eduLines ? `<div><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--field-data);">Education</div><div style="font-size:.88rem;color:var(--ink);margin-top:.25rem;">${eduLines}</div></div>` : ''}
+              ${pi.expertise ? `<div><div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--field-data);">Expertise</div><div style="font-size:.88rem;color:var(--ink);margin-top:.25rem;">${pi.expertise.replace(/·/g,'<br>')}</div></div>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // Render a member card
+    function memberCard(m, delay, isAlumni) {
+      const photoHtml = m.photo
+        ? `<img src="${m.photo}" alt="${m.name}" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">`
+        : `<span class="team-card__initials" ${isAlumni ? 'style="color:var(--gold);"' : ''}>${m.initials}</span>`;
+      const wrapStyle = isAlumni ? ' style="border-color:var(--gold);"' : '';
+      const roleStyle = isAlumni ? ' style="color:var(--gold);"' : '';
+      return `
+        <div class="card team-card fade-up" ${delay ? `style="transition-delay:${delay}s"` : ''}>
+          <div class="team-card__img-wrap"${wrapStyle}>${photoHtml}</div>
+          <h4 class="team-card__name">${m.name}</h4>
+          <div class="team-card__role"${roleStyle}>${m.role}</div>
+          <p class="team-card__bio">${m.bio1}</p>
+        </div>`;
+    }
+
+    document.getElementById('current-grid').innerHTML =
+      current.map((m, i) => memberCard(m, (i * 0.08).toFixed(2), false)).join('');
+    document.getElementById('alumni-grid').innerHTML =
+      alumni.map((m, i) => memberCard(m, (i * 0.08).toFixed(2), true)).join('');
+
+    // Re-trigger scroll observer for dynamically added .fade-up elements
+    document.querySelectorAll('.fade-up').forEach(el => {
+      if (!el.classList.contains('visible')) {
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: .12 });
+        obs.observe(el);
+      }
+    });
+  })
+  .catch(() => {
+    document.getElementById('pi-container').innerHTML = '<p style="color:red;">Could not load team data.</p>';
+  });
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
