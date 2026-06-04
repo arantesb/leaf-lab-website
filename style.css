@@ -150,7 +150,7 @@ p  { max-width: 68ch; font-family: var(--font-body); }
 .nav__links a {
   font-family: var(--font-sub);
   font-size: .82rem;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
   color: rgba(33,28,1,.65);
@@ -169,6 +169,7 @@ main { padding-top: var(--nav-h); }
   display: flex; align-items: center;
   background: var(--deep-forest);
   overflow: hidden;
+  padding-top: 4rem;
 }
 .hero__bg {
   position: absolute; inset: 0;
@@ -332,4 +333,4 @@ main { padding-top: var(--nav-h); }
   .footer__inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .nav__links { display: none; }
-  .nav__links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--deep-forest); padding: 1.5rem 2rem; gap: 1rem; border-top: 1px solid rgba(254,252,238,.
+  .nav__links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: var(--deep-forest); padding: 1.5rem 2rem; gap: 1rem; border-top: 1px sol
