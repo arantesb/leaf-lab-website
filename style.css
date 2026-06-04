@@ -226,9 +226,8 @@ main { padding-top: var(--nav-h); }
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
   text-align: center;
-  padding: 3rem 0 1.5rem;
-  margin-top: 4rem;
-  border-top: 1px solid rgba(254,252,238,.12);
+  padding: 1.5rem 0 1rem;
+  margin-top: 1.5rem;
   width: 100%;
   grid-column: 1 / -1;
 }
