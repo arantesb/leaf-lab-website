@@ -212,8 +212,8 @@ fetch('content/home.json')
     function animateStat(el) {
       const target = parseInt(el.dataset.target) || 0;
       const suffix = el.dataset.suffix || '';
-      const duration = 1800;
-      const fps = 30;
+      const duration = 3500;
+      const fps = 20;
       const totalFrames = Math.round(duration / (1000 / fps));
       let frame = 0;
       const timer = setInterval(() => {
