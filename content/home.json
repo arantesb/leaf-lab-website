@@ -5,11 +5,26 @@
     "titleHighlight": "Space",
     "description": "LEAF LAB develops cutting-edge spaceborne lidar methods to quantify global forest biomass and carbon stocks — connecting satellites to ground truth at planetary scale.",
     "stats": [
-      { "num": "70+", "label": "Publications" },
-      { "num": "6",   "label": "Active Projects" },
-      { "num": "12+", "label": "Countries Studied" },
-      { "num": "20+", "label": "Dissertations and Theses" },
-      { "num": "18+", "label": "Students and Alumni" }
+      {
+        "num": "70+",
+        "label": "Publications"
+      },
+      {
+        "num": "6+",
+        "label": "Active Projects"
+      },
+      {
+        "num": "12+",
+        "label": "Countries Studied"
+      },
+      {
+        "num": "20+",
+        "label": "Dissertations and Theses"
+      },
+      {
+        "num": "18+",
+        "label": "Students and Alumni"
+      }
     ]
   },
   "mission": {
@@ -18,10 +33,26 @@
     "text1": "LEAF LAB — Lidar Ecology and Forests — is a research group at the University of Maryland's Department of Geographical Sciences. We use novel remote sensing technologies to understand how forests occupy space and how that links to global carbon stocks and cycles.",
     "text2": "Our work spans algorithm development for forest biomass mapping, ecological theory testing, and validation frameworks for international biomass products — bridging fundamental science with climate policy.",
     "cards": [
-      { "emoji": "🛰", "title": "Spaceborne Lidar", "text": "GEDI and ICESat-2 missions deliver unprecedented 3-D forest structure data at global scale." },
-      { "emoji": "🌍", "title": "Global Biomass",   "text": "Building and validating allometric models for tropical, boreal, and temperate forests." },
-      { "emoji": "🌿", "title": "Forest Ecology",   "text": "Testing ecological theory — structural diversity, biodiversity links, disturbance dynamics." },
-      { "emoji": "🔬", "title": "Data Fusion",      "text": "Integrating lidar with Landsat, SAR, and optical datasets for multi-scale analysis." }
+      {
+        "emoji": "🛰",
+        "title": "Spaceborne Lidar",
+        "text": "GEDI and ICESat-2 missions deliver unprecedented 3-D forest structure data at global scale."
+      },
+      {
+        "emoji": "🌍",
+        "title": "Global Biomass",
+        "text": "Building and validating allometric models for tropical, boreal, and temperate forests."
+      },
+      {
+        "emoji": "🌿",
+        "title": "Forest Ecology",
+        "text": "Testing ecological theory — structural diversity, biodiversity links, disturbance dynamics."
+      },
+      {
+        "emoji": "🔬",
+        "title": "Data Fusion",
+        "text": "Integrating lidar with Landsat, SAR, and optical datasets for multi-scale analysis."
+      }
     ]
   },
   "highlights": [
