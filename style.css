@@ -128,8 +128,8 @@ p  { max-width: 68ch; font-family: var(--font-body); }
 }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 .nav__logo { display: flex; align-items: center; gap: 1rem; }
-.nav__logo img { height: 68px; width: auto; object-fit: contain; }
-.nav__logo svg { width: 68px; height: 68px; flex-shrink: 0; }
+.nav__logo img { height: 82px; width: auto; object-fit: contain; }
+.nav__logo svg { width: 82px; height: 82px; flex-shrink: 0; }
 .nav__logo-text { display: flex; flex-direction: column; line-height: 1; }
 .nav__logo-name {
   font-family: var(--font-display);
