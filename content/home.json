@@ -8,46 +8,48 @@
       { "num": "70+", "label": "Publications" },
       { "num": "6",   "label": "Active Projects" },
       { "num": "12+", "label": "Countries Studied" },
-      { "num": "20+", "label": "Dissertations & Theses" },
-      { "num": "18+", "label": "Students & Alumni" }
+      { "num": "20+", "label": "Dissertations and Theses" },
+      { "num": "18+", "label": "Students and Alumni" }
     ]
   },
   "mission": {
     "label": "Our Mission",
-    "title": "Forests as the Planet's Carbon Ledger",
+    "title": "Forests as the Planet Carbon Ledger",
     "text1": "LEAF LAB — Lidar Ecology and Forests — is a research group at the University of Maryland's Department of Geographical Sciences. We use novel remote sensing technologies to understand how forests occupy space and how that links to global carbon stocks and cycles.",
     "text2": "Our work spans algorithm development for forest biomass mapping, ecological theory testing, and validation frameworks for international biomass products — bridging fundamental science with climate policy.",
     "cards": [
-      { "emoji": "🛰", "title": "Spaceborne Lidar",  "text": "GEDI & ICESat-2 missions deliver unprecedented 3-D forest structure data at global scale." },
-      { "emoji": "🌍", "title": "Global Biomass",    "text": "Building and validating allometric models for tropical, boreal, and temperate forests." },
-      { "emoji": "🌿", "title": "Forest Ecology",    "text": "Testing ecological theory — structural diversity, biodiversity links, disturbance dynamics." },
-      { "emoji": "🔬", "title": "Data Fusion",       "text": "Integrating lidar with Landsat, SAR, and optical datasets for multi-scale analysis." }
+      { "emoji": "🛰", "title": "Spaceborne Lidar", "text": "GEDI and ICESat-2 missions deliver unprecedented 3-D forest structure data at global scale." },
+      { "emoji": "🌍", "title": "Global Biomass",   "text": "Building and validating allometric models for tropical, boreal, and temperate forests." },
+      { "emoji": "🌿", "title": "Forest Ecology",   "text": "Testing ecological theory — structural diversity, biodiversity links, disturbance dynamics." },
+      { "emoji": "🔬", "title": "Data Fusion",      "text": "Integrating lidar with Landsat, SAR, and optical datasets for multi-scale analysis." }
     ]
   },
   "highlights": [
     {
       "tag": "GEDI Mission",
       "title": "Global Biomass Density Models",
-      "text": "Led development of the allometric models behind NASA's GEDI footprint-level (~25 m) aboveground biomass density product — the first space-borne lidar designed specifically for forest carbon estimation.",
-      "linkText": "Read Publication →",
+      "text": "Led development of the allometric models behind NASA GEDI footprint-level aboveground biomass density product — the first space-borne lidar designed specifically for forest carbon estimation.",
+      "linkText": "Read Publication",
       "linkHref": "publications.html"
     },
     {
       "tag": "Protected Areas",
       "title": "Forests That Guard the Climate",
       "text": "First-of-its-kind GEDI analysis demonstrating that protected areas store significantly more carbon than unprotected forests — direct evidence for nature-based climate solutions.",
-      "linkText": "In the News →",
+      "linkText": "In the News",
       "linkHref": "news.html"
     },
     {
-      "tag": "Mozambique · Africa",
+      "tag": "Mozambique Africa",
       "title": "Charcoal Degradation Mapping",
       "text": "Combined GEDI and Landsat time series to quantify biomass loss from charcoal production across Mozambique — revealing invisible carbon emissions from forest degradation.",
-      "linkText": "Read Publication →",
+      "linkText": "Read Publication",
       "linkHref": "publications.html"
     }
   ],
   "cta": {
     "label": "Join Our Community",
     "title": "Interested in forest carbon science?",
-    "text": "We welcome collaborators, prospective g
+    "text": "We welcome collaborators, prospective graduate students, and postdoctoral researchers passionate about remote sensing and global forest ecology."
+  }
+}
