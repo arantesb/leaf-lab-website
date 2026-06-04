@@ -166,10 +166,10 @@ main { padding-top: var(--nav-h); }
 .hero {
   position: relative;
   min-height: calc(100vh - var(--nav-h));
-  display: flex; align-items: center;
+  display: flex; align-items: flex-start;
   background: var(--deep-forest);
   overflow: hidden;
-  padding-top: 4rem;
+  padding: 5rem 0 3rem;
 }
 .hero__bg {
   position: absolute; inset: 0;
