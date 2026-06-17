@@ -43,6 +43,36 @@ var SECTION_COLOR_DEFS = [
   ]}
 ];
 
+var BRAND_PALETTE = [
+  { hex: '#2c3e28', label: 'Floresta Escura' },
+  { hex: '#536d4a', label: 'Canopy' },
+  { hex: '#c8a45a', label: 'Dourado' },
+  { hex: '#efe293', label: 'Sunlight' },
+  { hex: '#fefcee', label: 'Paper' },
+  { hex: '#4a7c8e', label: 'Céu' },
+  { hex: '#211c01', label: 'Tinta' },
+  { hex: '#ffffff', label: 'Branco' },
+  { hex: '#000000', label: 'Preto' }
+];
+
+function paletteDots(key, isSection) {
+  return '<div class="palette-presets">' + BRAND_PALETTE.map(function(c) {
+    var fn = isSection ? 'setPaletteColor' : 'setGlobalPaletteColor';
+    return '<button class="palette-dot" style="background:'+c.hex+'" title="'+c.label+'" onclick="'+fn+'(\''+key+'\',\''+c.hex+'\')"></button>';
+  }).join('') + '</div>';
+}
+
+function setPaletteColor(key, hex) {
+  var el = document.getElementById('sclr-'+key);
+  if (el) { el.value = hex; previewSectionColor(key, hex); }
+}
+
+function setGlobalPaletteColor(varName, hex) {
+  var key = varName.replace(/-/g,'_');
+  var el = document.getElementById('clr-'+key);
+  if (el) { el.value = hex; previewColor(varName, hex); }
+}
+
 var ADMIN_CSS_MAP = {
   'nav_bg':          function(v){ return '.nav{background:'+v+'!important}'; },
   'hero_bg':         function(v){ return '.hero{background:'+v+'!important}'; },
@@ -425,14 +455,14 @@ function renderColors() {
     var label = COLOR_LABELS[varName];
     var val = colors[varName] || '#cccccc';
     var key = varName.replace(/-/g,'_');
-    return '<div class="color-item"><input type="color" class="color-swatch" id="clr-'+key+'" value="'+val+'" oninput="previewColor(\''+varName+'\',this.value)"/><div><div class="color-label">'+label+'</div><div class="color-value" id="clrv-'+key+'">'+val+'</div></div></div>';
+    return '<div class="color-item color-item--wide"><input type="color" class="color-swatch" id="clr-'+key+'" value="'+val+'" oninput="previewColor(\''+varName+'\',this.value)"/><div style="flex:1"><div class="color-label">'+label+'</div><div class="color-value" id="clrv-'+key+'">'+val+'</div>'+paletteDots(varName, false)+'</div></div>';
   }).join('');
 
   // Per-section colors
   document.getElementById('section-color-groups').innerHTML = SECTION_COLOR_DEFS.map(function(group) {
     var items = group.items.map(function(item) {
       var val = sectionColors[item.key] || item.def;
-      return '<div class="color-item"><input type="color" class="color-swatch" id="sclr-'+item.key+'" value="'+val+'" oninput="previewSectionColor(\''+item.key+'\',this.value)"/><div><div class="color-label">'+item.label+'</div><div class="color-value" id="sclrv-'+item.key+'">'+val+'</div></div></div>';
+      return '<div class="color-item color-item--wide"><input type="color" class="color-swatch" id="sclr-'+item.key+'" value="'+val+'" oninput="previewSectionColor(\''+item.key+'\',this.value)"/><div style="flex:1"><div class="color-label">'+item.label+'</div><div class="color-value" id="sclrv-'+item.key+'">'+val+'</div>'+paletteDots(item.key, true)+'</div></div>';
     }).join('');
     return '<div class="section-color-group"><div class="section-color-group-title">'+group.group+'</div><div class="section-color-grid">'+items+'</div></div>';
   }).join('');
@@ -461,37 +491,4 @@ function previewSectionColor(key, val) {
     if (ADMIN_CSS_MAP[k]) css += ADMIN_CSS_MAP[k](sc[k]);
   });
   var tag = document.getElementById('ll-section-preview');
-  if (!tag) { tag = document.createElement('style'); tag.id = 'll-section-preview'; document.head.appendChild(tag); }
-  tag.textContent = css;
-}
-
-async function saveColors() {
-  var colors = {};
-  Object.keys(COLOR_LABELS).forEach(function(varName) {
-    var key = varName.replace(/-/g,'_');
-    var el = document.getElementById('clr-'+key);
-    if (el) colors[varName] = el.value;
-  });
-  var sectionColors = {};
-  SECTION_COLOR_DEFS.forEach(function(group) {
-    group.items.forEach(function(item) {
-      var el = document.getElementById('sclr-'+item.key);
-      if (el) sectionColors[item.key] = el.value;
-    });
-  });
-  if (!data.settings) data.settings = {};
-  data.settings.colors = colors;
-  data.settings.sectionColors = sectionColors;
-  try {
-    await saveData('settings');
-    showToast('Cores salvas! O site atualiza em ~1 min ✓','success');
-  } catch(e) { showToast('Erro: '+e.message,'error'); }
-}
-
-// ── Toast ─────────────────────────────────────────────────
-function showToast(msg, type) {
-  var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = 'show ' + (type || 'success');
-  setTimeout(function(){ t.className = ''; }, 3500);
-}
+  if (!tag) { tag = document.createElement('style'); tag.id = 'll-sect
