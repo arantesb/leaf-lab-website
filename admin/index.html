@@ -115,6 +115,11 @@
     .color-label { font-size:.82rem; font-weight:600; color:var(--dark); margin-bottom:.2rem; }
     .color-value { font-size:.75rem; color:rgba(33,28,1,.5); font-family:monospace; }
 
+    /* Section color groups */
+    .section-color-group { margin-bottom:1.5rem; }
+    .section-color-group-title { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--green); margin-bottom:.75rem; padding-bottom:.5rem; border-bottom:1px solid rgba(83,109,74,.15); }
+    .section-color-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.75rem; }
+
     /* Highlight editor */
     .highlight-blocks { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
     .highlight-block { background:var(--paper); border:1px solid rgba(83,109,74,.15); border-radius:var(--radius); padding:1rem; }
@@ -321,10 +326,25 @@
 
       <!-- Colors editor -->
       <div id="sec-colors" class="section-panel" style="display:none">
-        <div class="content-header"><div><div class="content-title">Cores do Site</div><div class="content-count">Clique em uma cor para alterar</div></div><button class="btn btn-save" onclick="saveColors()">Salvar Cores</button></div>
-        <div class="color-grid" id="color-grid"></div>
-        <div style="margin-top:1.5rem;padding:1rem;background:var(--sun);border-radius:var(--radius);font-size:.82rem;color:rgba(33,28,1,.7);">
-          ⚠️ As cores são aplicadas em todo o site. Após salvar, aguarde ~1 minuto para o site atualizar. Use o botão "Ver site ao vivo" para confirmar.
+        <div class="content-header">
+          <div><div class="content-title">Cores do Site</div><div class="content-count">Paleta global · Cores por sessão</div></div>
+          <button class="btn btn-save" onclick="saveColors()">Salvar Cores</button>
+        </div>
+
+        <div class="page-editor">
+          <div class="page-editor-title">🎨 Paleta de Cores Global</div>
+          <p style="font-size:.82rem;color:rgba(33,28,1,.6);margin-bottom:1.25rem;">Estas cores formam a base do site. Alterar aqui muda o esquema geral.</p>
+          <div class="color-grid" id="color-grid"></div>
+        </div>
+
+        <div class="page-editor">
+          <div class="page-editor-title">🖼 Cores por Sessão</div>
+          <p style="font-size:.82rem;color:rgba(33,28,1,.6);margin-bottom:1.5rem;">Personaliza a cor de cada sessão individualmente — sobrepõe a paleta global acima.</p>
+          <div id="section-color-groups"></div>
+        </div>
+
+        <div style="padding:1rem;background:var(--sun);border-radius:var(--radius);font-size:.82rem;color:rgba(33,28,1,.7);">
+          ⚠️ Após salvar, aguarde ~1 minuto para o site atualizar. As alterações aparecem ao clicar nas cores antes de salvar (pré-visualização ao vivo).
         </div>
       </div>
 
