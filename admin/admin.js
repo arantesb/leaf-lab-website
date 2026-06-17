@@ -18,6 +18,42 @@ const COLOR_LABELS = {
   '--ink':         'Tinta / Texto principal'
 };
 
+var SECTION_COLOR_DEFS = [
+  { group: '🔝 Barra de Navegação', items: [
+    { key: 'nav_bg', label: 'Fundo', def: '#fefcee' }
+  ]},
+  { group: '🦸 Hero — Página Inicial', items: [
+    { key: 'hero_bg', label: 'Fundo', def: '#2c3e28' }
+  ]},
+  { group: '📄 Hero — Páginas Internas', items: [
+    { key: 'pageHero_bg', label: 'Fundo', def: '#2c3e28' }
+  ]},
+  { group: '🌿 Seções Alternadas (fundo claro)', items: [
+    { key: 'sectionAlt_bg', label: 'Fundo', def: '#efe293' }
+  ]},
+  { group: '🌲 Seções Escuras', items: [
+    { key: 'sectionDark_bg', label: 'Fundo', def: '#536d4a' }
+  ]},
+  { group: '🦶 Rodapé', items: [
+    { key: 'footer_bg', label: 'Fundo', def: '#2c3e28' }
+  ]},
+  { group: '🔘 Botão Principal', items: [
+    { key: 'btnPrimary_bg',   label: 'Fundo', def: '#536d4a' },
+    { key: 'btnPrimary_text', label: 'Texto', def: '#fefcee' }
+  ]}
+];
+
+var ADMIN_CSS_MAP = {
+  'nav_bg':          function(v){ return '.nav{background:'+v+'!important}'; },
+  'hero_bg':         function(v){ return '.hero{background:'+v+'!important}'; },
+  'pageHero_bg':     function(v){ return '.page-hero{background:'+v+'!important}'; },
+  'sectionAlt_bg':   function(v){ return '.section--alt{background:'+v+'!important}'; },
+  'sectionDark_bg':  function(v){ return '.section--dark{background:'+v+'!important}'; },
+  'footer_bg':       function(v){ return '.footer{background:'+v+'!important}'; },
+  'btnPrimary_bg':   function(v){ return '.btn-primary{background:'+v+'!important}'; },
+  'btnPrimary_text': function(v){ return '.btn-primary{color:'+v+'!important}'; }
+};
+
 // ── Auth ──────────────────────────────────────────────────
 async function login() {
   var user = document.getElementById('ghUser').value.trim();
@@ -382,11 +418,23 @@ async function saveContactSection(section) {
 // ── Colors editor ─────────────────────────────────────────
 function renderColors() {
   var colors = (data.settings && data.settings.colors) || {};
+  var sectionColors = (data.settings && data.settings.sectionColors) || {};
+
+  // Global palette
   document.getElementById('color-grid').innerHTML = Object.keys(COLOR_LABELS).map(function(varName) {
     var label = COLOR_LABELS[varName];
     var val = colors[varName] || '#cccccc';
     var key = varName.replace(/-/g,'_');
     return '<div class="color-item"><input type="color" class="color-swatch" id="clr-'+key+'" value="'+val+'" oninput="previewColor(\''+varName+'\',this.value)"/><div><div class="color-label">'+label+'</div><div class="color-value" id="clrv-'+key+'">'+val+'</div></div></div>';
+  }).join('');
+
+  // Per-section colors
+  document.getElementById('section-color-groups').innerHTML = SECTION_COLOR_DEFS.map(function(group) {
+    var items = group.items.map(function(item) {
+      var val = sectionColors[item.key] || item.def;
+      return '<div class="color-item"><input type="color" class="color-swatch" id="sclr-'+item.key+'" value="'+val+'" oninput="previewSectionColor(\''+item.key+'\',this.value)"/><div><div class="color-label">'+item.label+'</div><div class="color-value" id="sclrv-'+item.key+'">'+val+'</div></div></div>';
+    }).join('');
+    return '<div class="section-color-group"><div class="section-color-group-title">'+group.group+'</div><div class="section-color-grid">'+items+'</div></div>';
   }).join('');
 }
 
@@ -397,6 +445,26 @@ function previewColor(varName, val) {
   if (lbl) lbl.textContent = val;
 }
 
+function previewSectionColor(key, val) {
+  var lbl = document.getElementById('sclrv-'+key);
+  if (lbl) lbl.textContent = val;
+  // Collect all current section color values and inject live preview
+  var sc = {};
+  SECTION_COLOR_DEFS.forEach(function(group) {
+    group.items.forEach(function(item) {
+      var el = document.getElementById('sclr-'+item.key);
+      if (el) sc[item.key] = el.value;
+    });
+  });
+  var css = '';
+  Object.keys(sc).forEach(function(k) {
+    if (ADMIN_CSS_MAP[k]) css += ADMIN_CSS_MAP[k](sc[k]);
+  });
+  var tag = document.getElementById('ll-section-preview');
+  if (!tag) { tag = document.createElement('style'); tag.id = 'll-section-preview'; document.head.appendChild(tag); }
+  tag.textContent = css;
+}
+
 async function saveColors() {
   var colors = {};
   Object.keys(COLOR_LABELS).forEach(function(varName) {
@@ -404,8 +472,16 @@ async function saveColors() {
     var el = document.getElementById('clr-'+key);
     if (el) colors[varName] = el.value;
   });
+  var sectionColors = {};
+  SECTION_COLOR_DEFS.forEach(function(group) {
+    group.items.forEach(function(item) {
+      var el = document.getElementById('sclr-'+item.key);
+      if (el) sectionColors[item.key] = el.value;
+    });
+  });
   if (!data.settings) data.settings = {};
   data.settings.colors = colors;
+  data.settings.sectionColors = sectionColors;
   try {
     await saveData('settings');
     showToast('Cores salvas! O site atualiza em ~1 min ✓','success');
