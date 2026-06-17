@@ -118,7 +118,13 @@
     /* Section color groups */
     .section-color-group { margin-bottom:1.5rem; }
     .section-color-group-title { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--green); margin-bottom:.75rem; padding-bottom:.5rem; border-bottom:1px solid rgba(83,109,74,.15); }
-    .section-color-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.75rem; }
+    .section-color-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:.75rem; }
+    .color-item--wide { align-items:flex-start; }
+
+    /* Palette preset dots */
+    .palette-presets { display:flex; gap:5px; flex-wrap:wrap; margin-top:.6rem; }
+    .palette-dot { width:20px; height:20px; border-radius:50%; border:2px solid rgba(0,0,0,.15); cursor:pointer; padding:0; transition:transform .15s, box-shadow .15s; flex-shrink:0; outline:none; }
+    .palette-dot:hover { transform:scale(1.25); box-shadow:0 2px 8px rgba(0,0,0,.25); border-color:rgba(0,0,0,.3); }
 
     /* Highlight editor */
     .highlight-blocks { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
@@ -356,19 +362,4 @@
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal" id="modal">
     <div class="modal-header">
-      <div class="modal-title" id="modal-title">Adicionar</div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body" id="modal-body"></div>
-    <div class="modal-footer">
-      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
-      <button class="btn btn-save" id="modal-save-btn" onclick="saveItem()">Salvar</button>
-    </div>
-  </div>
-</div>
-
-<div id="toast"></div>
-
-<script src="admin.js"></script>
-</body>
-</html>
+      <div class="m
