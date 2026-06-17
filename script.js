@@ -4,14 +4,39 @@
 
 // ── Apply color theme from content/settings.json ────────────
 (function applySettings() {
+  const CSS_SECTION_MAP = {
+    'nav_bg':          v => `.nav{background:${v}!important}`,
+    'hero_bg':         v => `.hero{background:${v}!important}`,
+    'pageHero_bg':     v => `.page-hero{background:${v}!important}`,
+    'sectionAlt_bg':   v => `.section--alt{background:${v}!important}`,
+    'sectionDark_bg':  v => `.section--dark{background:${v}!important}`,
+    'footer_bg':       v => `.footer{background:${v}!important}`,
+    'btnPrimary_bg':   v => `.btn-primary{background:${v}!important}`,
+    'btnPrimary_text': v => `.btn-primary{color:${v}!important}`
+  };
+
   fetch('content/settings.json')
     .then(r => r.json())
     .then(s => {
-      if (!s.colors) return;
-      const vars = Object.entries(s.colors).map(([k, v]) => `${k}:${v}`).join(';');
-      const el = document.createElement('style');
-      el.textContent = `:root{${vars}}`;
-      document.head.appendChild(el);
+      // Global CSS variables
+      if (s.colors) {
+        const vars = Object.entries(s.colors).map(([k, v]) => `${k}:${v}`).join(';');
+        const el = document.createElement('style');
+        el.textContent = `:root{${vars}}`;
+        document.head.appendChild(el);
+      }
+      // Per-section overrides
+      if (s.sectionColors) {
+        const css = Object.entries(s.sectionColors)
+          .filter(([k, v]) => CSS_SECTION_MAP[k] && v)
+          .map(([k, v]) => CSS_SECTION_MAP[k](v))
+          .join('');
+        if (css) {
+          const el2 = document.createElement('style');
+          el2.textContent = css;
+          document.head.appendChild(el2);
+        }
+      }
     })
     .catch(() => {});
 })();
@@ -63,4 +88,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Contact form (demo) ──────────────────────────────────
   const form = document.getElementById('contactForm');
   if (form) {
-    form.add
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = 'var(--canopy)';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 3000);
+    });
+  }
+
+});
