@@ -491,4 +491,37 @@ function previewSectionColor(key, val) {
     if (ADMIN_CSS_MAP[k]) css += ADMIN_CSS_MAP[k](sc[k]);
   });
   var tag = document.getElementById('ll-section-preview');
-  if (!tag) { tag = document.createElement('style'); tag.id = 'll-sect
+  if (!tag) { tag = document.createElement('style'); tag.id = 'll-section-preview'; document.head.appendChild(tag); }
+  tag.textContent = css;
+}
+
+async function saveColors() {
+  var colors = {};
+  Object.keys(COLOR_LABELS).forEach(function(varName) {
+    var key = varName.replace(/-/g,'_');
+    var el = document.getElementById('clr-'+key);
+    if (el) colors[varName] = el.value;
+  });
+  var sectionColors = {};
+  SECTION_COLOR_DEFS.forEach(function(group) {
+    group.items.forEach(function(item) {
+      var el = document.getElementById('sclr-'+item.key);
+      if (el) sectionColors[item.key] = el.value;
+    });
+  });
+  if (!data.settings) data.settings = {};
+  data.settings.colors = colors;
+  data.settings.sectionColors = sectionColors;
+  try {
+    await saveData('settings');
+    showToast('Cores salvas! O site atualiza em ~1 min ✓','success');
+  } catch(e) { showToast('Erro: '+e.message,'error'); }
+}
+
+// ── Toast ─────────────────────────────────────────────────
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'show ' + (type || 'success');
+  setTimeout(function(){ t.className = ''; }, 3500);
+}
