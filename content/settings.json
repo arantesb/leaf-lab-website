@@ -7,5 +7,15 @@
     "--paper":       "#fefcee",
     "--sky":         "#4a7c8e",
     "--ink":         "#211c01"
+  },
+  "sectionColors": {
+    "nav_bg":          "#fefcee",
+    "hero_bg":         "#2c3e28",
+    "pageHero_bg":     "#2c3e28",
+    "sectionAlt_bg":   "#efe293",
+    "sectionDark_bg":  "#536d4a",
+    "footer_bg":       "#2c3e28",
+    "btnPrimary_bg":   "#536d4a",
+    "btnPrimary_text": "#fefcee"
   }
 }
